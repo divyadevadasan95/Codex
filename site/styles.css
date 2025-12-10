@@ -1,11 +1,12 @@
 :root {
-  --sand: #f8f4ed;
-  --linen: #f2e9dd;
-  --clay: #d9c7ab;
-  --ink: #2d2014;
-  --muted: #6f5c45;
-  --accent: #e9c77b;
-  --white: #fff;
+  --canvas: #f9f7f3;
+  --sand: #e6d7c7;
+  --petal: #f7e8e4;
+  --teal: #b8e0d2;
+  --ink: #2f2a28;
+  --muted: #6d625c;
+  --accent: #c6d8cf;
+  --white: #ffffff;
   font-family: "Inter", "Helvetica Neue", Arial, sans-serif;
 }
 
@@ -15,7 +16,9 @@
 
 body {
   margin: 0;
-  background: var(--sand);
+  background: radial-gradient(circle at 20% 20%, rgba(184, 224, 210, 0.16), transparent 28%),
+    radial-gradient(circle at 80% 10%, rgba(247, 232, 228, 0.4), transparent 30%),
+    var(--canvas);
   color: var(--ink);
   line-height: 1.6;
 }
@@ -30,11 +33,12 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 18px 42px;
-  border-bottom: 1px solid var(--clay);
-  background: rgba(248, 244, 237, 0.9);
+  border-bottom: 1px solid rgba(47, 42, 40, 0.08);
+  background: rgba(249, 247, 243, 0.82);
   position: sticky;
   top: 0;
   z-index: 8;
+  backdrop-filter: blur(12px);
 }
 
 .brand {
@@ -56,7 +60,7 @@ a {
 
 .nav a:hover,
 .nav a:focus {
-  background: var(--linen);
+  background: var(--petal);
 }
 
 .cta-inline {
@@ -66,9 +70,9 @@ a {
 }
 
 .button {
-  background: var(--ink);
-  color: var(--sand);
-  border: 1px solid var(--ink);
+  background: linear-gradient(135deg, #2f2a28, #4b423f);
+  color: var(--white);
+  border: 1px solid rgba(47, 42, 40, 0.1);
   border-radius: 14px;
   padding: 10px 16px;
   font-weight: 600;
@@ -78,13 +82,13 @@ a {
 
 .button:hover {
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 12px 30px rgba(47, 42, 40, 0.18);
 }
 
 .button.ghost {
   background: transparent;
   color: var(--ink);
-  border-color: var(--clay);
+  border-color: rgba(47, 42, 40, 0.2);
 }
 
 .button.wide {
@@ -105,12 +109,13 @@ a {
 
 .tagline {
   align-self: flex-start;
-  background: var(--linen);
+  background: var(--teal);
   padding: 10px 14px;
-  border-radius: 12px;
+  border-radius: 999px;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--ink);
   letter-spacing: 0.02em;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.06);
 }
 
 .hero-grid {
@@ -136,42 +141,46 @@ a {
   width: 72px;
   height: 72px;
   border-radius: 12px;
-  background: var(--linen);
-  border: 1px solid var(--clay);
+  background: var(--petal);
+  border: 1px solid rgba(47, 42, 40, 0.08);
 }
 
 .thumb.active {
-  background: linear-gradient(180deg, #f4e5b8 0%, #f2e1a3 100%);
-  box-shadow: inset 0 0 0 2px var(--ink);
+  background: linear-gradient(180deg, #f7e8e4 0%, #e6d7c7 100%);
+  box-shadow: inset 0 0 0 2px var(--teal);
 }
 
 .feature-frame {
   position: relative;
-  background: var(--linen);
+  background: linear-gradient(145deg, rgba(247, 232, 228, 0.7), rgba(230, 215, 199, 0.8));
   border-radius: 28px;
   padding: 28px;
-  border: 1px solid var(--clay);
+  border: 1px solid rgba(47, 42, 40, 0.08);
   min-height: 420px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   overflow: hidden;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08);
 }
 
 .feature-ink {
   position: absolute;
   top: 18px;
   right: 18px;
-  background: var(--ink);
-  color: var(--sand);
+  background: rgba(47, 42, 40, 0.9);
+  color: var(--white);
   padding: 6px 12px;
   border-radius: 999px;
   font-size: 12px;
   letter-spacing: 0.04em;
+  text-transform: uppercase;
 }
 
 .product-visual {
-  background: radial-gradient(circle at 50% 30%, #f8e7b7, #edd59a 48%, #e2cfa0 70%);
+  background: radial-gradient(circle at 25% 20%, rgba(184, 224, 210, 0.6), transparent 48%),
+    radial-gradient(circle at 75% 30%, rgba(247, 232, 228, 0.9), transparent 50%),
+    linear-gradient(180deg, #f7efe8, #e6d7c7);
   width: 100%;
   height: 360px;
   border-radius: 20px;
@@ -184,11 +193,11 @@ a {
 .product-visual::after {
   content: "";
   position: absolute;
-  width: 70%;
-  height: 14px;
-  background: #f3dd99;
-  bottom: 16%;
-  left: 15%;
+  width: 80%;
+  height: 16px;
+  background: #dceae3;
+  bottom: 14%;
+  left: 10%;
   border-radius: 50%;
   filter: blur(28px);
   opacity: 0.5;
@@ -197,14 +206,14 @@ a {
 .product-stick {
   width: 86px;
   height: 280px;
-  background: linear-gradient(180deg, #f3d9a4, #d7b772);
+  background: linear-gradient(180deg, #f7e8e4, #d5c5b4);
   border-radius: 20px;
   display: grid;
   place-items: center;
   letter-spacing: 0.18em;
   font-weight: 700;
   color: var(--ink);
-  box-shadow: 0 20px 30px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 24px 40px rgba(0, 0, 0, 0.1);
 }
 
 .details {
@@ -217,7 +226,7 @@ a {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  background: var(--linen);
+  background: var(--petal);
   padding: 8px 12px;
   border-radius: 14px;
   font-weight: 600;
@@ -246,7 +255,12 @@ h1 {
 .meta .divider {
   width: 1px;
   height: 18px;
-  background: var(--clay);
+  background: rgba(47, 42, 40, 0.14);
+}
+
+.stat strong {
+  display: block;
+  font-size: 15px;
 }
 
 .benefits {
@@ -257,11 +271,11 @@ h1 {
 }
 
 .card {
-  background: var(--white);
+  background: rgba(255, 255, 255, 0.9);
   border-radius: 20px;
-  border: 1px solid var(--clay);
+  border: 1px solid rgba(47, 42, 40, 0.08);
   padding: 18px 20px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.05);
 }
 
 .card h3 {
@@ -312,13 +326,60 @@ h1 {
   font-size: 14px;
 }
 
+.ritual {
+  max-width: 1100px;
+  margin: 48px auto 0;
+  background: linear-gradient(180deg, rgba(184, 224, 210, 0.28), rgba(247, 232, 228, 0.7));
+  border-radius: 28px;
+  padding: 28px;
+  border: 1px solid rgba(47, 42, 40, 0.08);
+  display: grid;
+  gap: 12px;
+  box-shadow: 0 16px 38px rgba(0, 0, 0, 0.07);
+}
+
+.ritual .note {
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-size: 12px;
+  color: var(--ink);
+}
+
+.ritual-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 14px;
+}
+
+.ritual-step {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 12px;
+  align-items: center;
+  padding: 12px;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid rgba(47, 42, 40, 0.06);
+}
+
+.step-number {
+  width: 42px;
+  height: 42px;
+  border-radius: 12px;
+  background: var(--teal);
+  display: grid;
+  place-items: center;
+  font-weight: 700;
+  color: var(--ink);
+}
+
 .membership {
   max-width: 1100px;
   margin: 64px auto 0;
-  background: var(--linen);
+  background: var(--petal);
   border-radius: 24px;
   padding: 32px;
-  border: 1px solid var(--clay);
+  border: 1px solid rgba(47, 42, 40, 0.08);
   text-align: center;
   display: grid;
   gap: 12px;
@@ -328,7 +389,7 @@ h1 {
   text-transform: uppercase;
   letter-spacing: 0.12em;
   font-size: 12px;
-  color: var(--muted);
+  color: var(--ink);
 }
 
 .membership-actions {
@@ -352,8 +413,8 @@ h1 {
 }
 
 .ingredient-card {
-  background: var(--white);
-  border: 1px solid var(--clay);
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(47, 42, 40, 0.08);
   border-radius: 16px;
   padding: 16px 18px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
@@ -361,9 +422,9 @@ h1 {
 
 .footer {
   margin-top: 64px;
-  border-top: 1px solid var(--clay);
+  border-top: 1px solid rgba(47, 42, 40, 0.08);
   padding: 24px 36px 32px;
-  background: #f6f0e4;
+  background: linear-gradient(180deg, rgba(247, 232, 228, 0.65), rgba(230, 215, 199, 0.9));
   display: grid;
   gap: 8px;
   text-align: center;
@@ -419,6 +480,10 @@ h1 {
 
   h1 {
     font-size: 26px;
+  }
+
+  .ritual-grid {
+    grid-template-columns: 1fr;
   }
 
   .product-visual {
